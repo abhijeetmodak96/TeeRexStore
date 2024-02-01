@@ -2,7 +2,7 @@
 
 const Header = () => {
   return (
-    <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-50 lg:bg-green-50">
+    <div className="sticky top-0 flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-50 lg:bg-green-50 ">
       <div className="logo-container">
         <img
           className="w-48 px-3 pt-2"

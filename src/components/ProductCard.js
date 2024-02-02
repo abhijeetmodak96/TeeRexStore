@@ -1,7 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const ProductCard = ({ productData }) => {
   const { name, imageURL, price } = productData;
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    // Dispatch an action
+    dispatch(addItem(item));
+  };
 
   return (
     <div
@@ -11,10 +19,17 @@ const ProductCard = ({ productData }) => {
       <img className="rounded-lg" alt="res-logo" src={imageURL} />
       <h3 className="font-bold py-4 text-lg">{name}</h3>
       <div className="flex justify-between">
-        <h4 className="font-bold">{"Rs." + price}</h4>
-        <h4 className="border border-black mx-3 px-6 rounded-lg hover:bg-slate-800 bg-slate-600 text-white">
-          Cart
-        </h4>
+        <div className="flex justify-between">
+          <h4 className="font-bold">{"Rs." + price}</h4>
+        </div>
+        <div className="">
+          <button
+            className="border border-black mx-3 px-4 rounded-md hover:bg-slate-800 bg-slate-600 text-white shadow-lg"
+            onClick={() => handleAddItem(productData)}
+          >
+            Cart +
+          </button>
+        </div>
       </div>
     </div>
   );

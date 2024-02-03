@@ -1,15 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 
 const ProductCard = ({ productData }) => {
   const { name, imageURL, price } = productData;
   const dispatch = useDispatch();
 
+  const inCart = useSelector((store) =>
+    store.cart.items.some((item) => item.id === productData.id)
+  );
+
   const handleAddItem = (item) => {
     // Dispatch an action
-    dispatch(addItem(item));
+    dispatch(addItem({ ...item, totalQuantity: item.quantity }));
   };
+
+  const buttonText = inCart ? "In Cart" : "Cart +";
 
   return (
     <div
@@ -27,7 +33,7 @@ const ProductCard = ({ productData }) => {
             className="border border-black mx-3 px-4 rounded-md hover:bg-slate-800 bg-slate-600 text-white shadow-lg"
             onClick={() => handleAddItem(productData)}
           >
-            Cart +
+            {buttonText}
           </button>
         </div>
       </div>

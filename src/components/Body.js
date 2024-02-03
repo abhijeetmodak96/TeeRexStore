@@ -1,7 +1,6 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { CATALOGUE_URL } from "../utils/constants";
 import ProductCard from "./ProductCard";
-import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfProducts, setListOfProducts] = useState([]);

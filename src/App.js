@@ -1,6 +1,5 @@
 import { Provider } from "react-redux";
 import Body from "./components/Body";
-import Header from "./components/Header";
 import Head from "./components/Head";
 import appStore from "./utils/appStore";
 import "./index.css";

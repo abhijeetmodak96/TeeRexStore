@@ -11,7 +11,6 @@ const ItemList = ({ items }) => {
   };
 
   const handleSubtractItem = (item) => {
-    // Dispatch an action
     dispatch(removeItem(item.id));
   };
 

@@ -11,7 +11,6 @@ const ProductCard = ({ productData }) => {
   );
 
   const handleAddItem = (item) => {
-    // Dispatch an action
     dispatch(addItem({ ...item, totalQuantity: item.quantity }));
   };
 
@@ -20,7 +19,7 @@ const ProductCard = ({ productData }) => {
   return (
     <div
       data-testid="proCard"
-      className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200"
+      className="m-3 p-3 w-[240px] rounded-lg bg-gray-100 hover:bg-gray-200"
     >
       <img className="rounded-lg" alt="res-logo" src={imageURL} />
       <h3 className="font-bold py-4 text-lg">{name}</h3>

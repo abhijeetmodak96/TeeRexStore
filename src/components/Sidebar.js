@@ -1,15 +1,10 @@
 import React from "react";
+import Checkboxes from "./Checkboxes";
 
 const Sidebar = () => {
   return (
-    <div className="backdrop-filter">
-      <ul className="backdrop-filter">
-        color
-        <li className="backdrop-filter">red</li>
-        <li>blue</li>
-        <li>green</li>
-        <li>orange</li>
-      </ul>
+    <div className="bg-gray-50 p-10 m-10 mt-28 border border-b-4 shadow-md">
+      <Checkboxes />
     </div>
   );
 };
